@@ -1,0 +1,198 @@
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #111;
+  padding: 18px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #222;
+  position: sticky;   /* stays at top on scroll */
+  top: 0;
+  z-index: 999;
+}
+
+.nav-center {
+  font-size: 28px;
+  font-weight: 600;
+  color: #eaeaea;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+
+
+
+
+
+
+:root{
+  --bg:#0f0f0f;
+  --card:#171717;
+  --muted:#cfcfcf;
+  --gap:15px;
+}
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  font-family: "Arial", sans-serif;
+  background:var(--bg);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width:100%;
+  max-width:1400px;
+  margin:24px auto 0;
+  padding:0;
+}
+.hero .kit {
+  width:100%;
+  display:block;
+  border-radius:4px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+  user-select:none;
+}
+
+/* Hotspots overlay */
+.hotspots {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+/* Buttons placed absolutely; re-enable pointer-events on them */
+.drum-btn {
+  position: absolute;
+  pointer-events: auto;
+  border-radius:50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  outline: none;
+  border: 3px solid rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+}
+
+/* If an element is marked aria-hidden, don't let it capture pointer events */
+.drum-btn[aria-hidden="true"] {
+  pointer-events: none;
+  /* keep it visually hidden via inline opacity if present */
+}
+
+/* sizes */
+.drum-btn.small { width:110px; height:110px; }
+.drum-btn.med   { width:150px; height:150px; }
+.drum-btn.large { width:210px; height:210px; }
+.drum-btn.xlarge { width:260px; height:260px; }
+
+/* active effect */
+.drum-btn.active {
+  transform: translate(-50%,-50%) scale(1.12);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.6), inset 0 0 30px rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* Keyboard area */
+.keyboard-wrap {
+  width:95%;
+  max-width:1100px;
+  margin: 36px auto 72px;
+}
+.keyboard {
+  display:flex;
+  flex-wrap:wrap;
+  gap: var(--gap);
+  justify-content:center;
+}
+
+.key {
+  width: 90px;
+  height: 90px;
+  background:#1b1b1b;
+  border-radius:10px;
+  border: 3px solid #333;
+  text-align:center;
+  padding-top:10px;
+  color:#cfcfcf;
+  font-size:18px;
+  box-sizing:border-box;
+  user-select:none;
+  transition: transform .08s ease, filter .08s ease, border-color .08s ease;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.key span {
+  font-size:20px;
+  color:#E6E6E6;
+  display:block;
+  margin-bottom:8px;
+}
+.key strong{
+  font-size:14px;
+  letter-spacing:1px;
+  font-weight:600;
+  color:#dcdcdc;
+}
+
+.space-key {
+  width: 64%;
+  height: 90px;
+  background:#1b1b1b;
+  border-radius:10px;
+  border:3px solid #333;
+  padding-top:20px;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-top:6px;
+  user-select:none;
+}
+
+/* colored borders (tuned to screenshot) */
+.red    { border-color: #6d1b1b; }
+.green  { border-color: #264e26; }
+.yellow { border-color: #6a5a12; }
+.blue   { border-color: #163b62; }
+.cyan   { border-color: #133f44; }
+.indigo { border-color: #2b2b65; }
+.purple { border-color: #52254f; }
+.orange { border-color: #4d351d; }
+.white  { border-color: #6f6f6f; }
+
+/* Active key effect */
+.key.active, .space-key.active {
+  transform: scale(1.06);
+  filter: brightness(1.18);
+  border-color: #fff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .drum-btn.small{ width:80px; height:80px; }
+  .drum-btn.med{ width:110px; height:110px; }
+  .drum-btn.large{ width:150px; height:150px; }
+  .drum-btn.xlarge{ width:190px; height:190px; }
+  .key { width:74px; height:74px; font-size:16px; }
+  .key span { font-size:16px; }
+  .keyboard-wrap { margin:20px auto 50px; }
+}
+@media (max-width:520px){
+  .key { width:56px; height:64px; font-size:14px }
+  .key span{ font-size:14px }
+  .space-key { width:100%; }
+}
+
+
+
